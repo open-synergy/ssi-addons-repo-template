@@ -15,8 +15,6 @@ odoo_version:
   default: 8.0
   choices:
     - 8.0
-    - 13.0
-    - 14.0
   help: Which Odoo version are we deploying in this branch?
 
 repo_slug:
@@ -87,3 +85,8 @@ include_wkhtmltopdf:
   help:
     Do you need to install wkhtmltopdf? Usually only needed if you're going to test PDF
     report generation.
+
+include_aeroo_report:
+  type: bool
+  default: no
+  help: Do you need to install aeroo report?

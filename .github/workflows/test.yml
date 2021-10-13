@@ -2,13 +2,16 @@ name: test
 
 on:
   pull_request:
+    paths-ignore:
+      - README.md
+      - CONTRIBUTING.md
+      - docs/**.md
   push:
     branches: [master]
-  release:
-    types: [created]
-
-env:
-  POETRY_VIRTUALENVS_IN_PROJECT: "true"
+    paths-ignore:
+      - README.md
+      - CONTRIBUTING.md
+      - docs/**.md
 
 jobs:
   test:
@@ -16,16 +19,14 @@ jobs:
     strategy:
       matrix:
         python-version:
-          - 3.6
-          - 3.8
+          - 2.7
         odoo-version:
-          - 13.0
-          - 14.0
+          - 8.0
     steps:
-      # Prepare environment
-      - uses: actions/checkout@v2.3.3
+      # Shared steps
+      - uses: actions/checkout@v1
       - name: Install python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
       - name: Python Poetry Action
