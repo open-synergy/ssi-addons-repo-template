@@ -14,7 +14,7 @@ _migrations:
 
 odoo_version:
   type: float
-  default: 8.0
+  default: 18.0
   choices:
     - 8.0
     - 13.0
