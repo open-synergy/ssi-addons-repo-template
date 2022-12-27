@@ -78,8 +78,7 @@ env:
     {%- endif %}
 
 install:
-    - git clone --depth=1 https://github.com/akretion/maintainer-quality-tools.git
-    ${HOME}/maintainer-quality-tools
+    - git clone --depth=1 https://github.com/akretion/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
     - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
     {%- if include_aeroo_report %}
     - git clone https://github.com/aeroo/aeroo_reports.git ${HOME}/aeroo_reports
