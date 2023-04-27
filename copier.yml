@@ -17,6 +17,7 @@ odoo_version:
     - 8.0
     - 11.0
     - 14.0
+    - 16.0
   help: Which Odoo version are we deploying in this branch?
 
 repo_slug:

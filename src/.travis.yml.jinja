@@ -32,8 +32,6 @@ addons:
     {%- endif %}
     packages:
       - expect-dev # provides unbuffer utility
-      - swig
-      - python3-pykcs11
       {%- for package in travis_apt_packages %}
       - {{ package|tojson }}
       {%- endfor %}
@@ -81,7 +79,7 @@ env:
     {%- endif %}
 
 install:
-    - git clone --depth=1 https://github.com/akretion/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+    - git clone --depth=1 https://github.com/open-synergy/ssi-maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
     - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
     {%- if include_aeroo_report %}
     - git clone https://github.com/aeroo/aeroo_reports.git ${HOME}/aeroo_reports
